@@ -31,3 +31,20 @@ $jsonComment = '
 
 printf($jsonComment, 1, (int) $_POST['post_id'], (string) $_POST['body']);
 ```
+
+# READIBILITY in comments-add.php
+- printf is not as fast as echoing but as you can see the json is alot more readable than echoing
+
+```php
+<?php 
+// comment data
+$jsonComment = '
+{
+    "id":'.1.',
+    "post_id":'.$_POST['post_id'].', 
+    "body":'.$_POST['body'].'
+}
+';
+
+echo $jsonComment;
+```
